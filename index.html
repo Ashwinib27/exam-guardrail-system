@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Exam Guardrail System</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<h1>Exam Guardrail Monitoring System</h1>
+
+<button onclick="startExam()">Start Exam</button>
+
+<script>
+function startExam(){
+
+fetch('/start')
+
+alert("Exam Started. Monitoring Enabled.");
+
+document.addEventListener("visibilitychange", function() {
+    if(document.hidden){
+        alert("Warning: Tab switching detected!");
+    }
+});
+}
+</script>
+
+</body>
+</html>
